@@ -10,7 +10,7 @@ export class AuthenticationService {
   constructor(private apiService: ApiService) { }
 
  async signup(username,password){
-   return await this.apiService.post('auth/signup', {username, password});
-
+   let response = this.apiService.post('auth/signup', {username, password});
+   return await response;
   }
 }
