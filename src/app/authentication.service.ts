@@ -8,25 +8,20 @@ export class AuthenticationService {
   token: string;
   constructor(private apiService: ApiService) {}
 
-  async signup(username, password) {
+  async signup(username: string, password: string) {
     let response = this.apiService.post("auth/signup", { username, password });
     return await response;
   }
 
-  async login() {
-    let loginData = {
-      username: "Test User",
-      password: "password",
-    };
-
-    await this.apiService.post("auth/signup", loginData);
-
+  async login(username: string, password: string) {
+    let loginData = { username, password };
+    
     const response = await this.apiService.post("auth/login", loginData);
 
     this.token = response.token;
   }
 
-  getToken(){
+  get getToken() {
     return this.token;
   }
 }

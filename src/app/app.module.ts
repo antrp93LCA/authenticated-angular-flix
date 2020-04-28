@@ -16,6 +16,7 @@ import {MovieService} from './movie.service';
 import {MovieApiService} from './movie-api.service';
 import {ApiService} from './api.service';
 import { SignUpLoginComponent } from './sign-up-login/sign-up-login.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SignUpLoginComponent } from './sign-up-login/sign-up-login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [MovieService,MovieApiService,ApiService,],
   bootstrap: [AppComponent]
