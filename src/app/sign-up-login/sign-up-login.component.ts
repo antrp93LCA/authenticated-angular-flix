@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthenticationService } from "../authentication.service";
-import {Router} from '@angular/router';
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-sign-up-login",
@@ -11,17 +11,16 @@ export class SignUpLoginComponent implements OnInit {
   username: string;
   password: string;
 
-  constructor(private authService: AuthenticationService,
-              private router: Router) {}
+  constructor(
+    private authService: AuthenticationService,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
   async login() {
     await this.authService.login(this.username, this.password);
-
-    if(this.authService.login(this.username,this.password)){
-      this.router.navigate(['/main'])
-    }
+    this.router.navigate(["/main"]);
   }
 
   async signup() {
