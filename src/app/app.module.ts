@@ -17,6 +17,7 @@ import {MovieApiService} from './movie-api.service';
 import {ApiService} from './api.service';
 import { SignUpLoginComponent } from './sign-up-login/sign-up-login.component';
 import {FormsModule} from '@angular/forms';
+import { AuthInterceptor } from './auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [MovieService,MovieApiService,ApiService,],
+  providers: [MovieService,MovieApiService,ApiService,AuthInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
